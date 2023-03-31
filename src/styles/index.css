@@ -10,3 +10,24 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+#counter {
+    background-color: black;
+    color : white;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#numbers{
+    font-size: 100px;
+    letter-spacing: 40px;
+}
+
+i{
+    margin-right: 40px;
+}
+
+#setCountdown{
+    margin: 20px;
+}

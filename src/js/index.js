@@ -6,7 +6,25 @@ import ReactDOM from "react-dom";
 import "../styles/index.css";
 
 //import your own components
-import Home from "./component/home.jsx";
+import SecondsCounter from "./component/counter.jsx";
+import SetCountdown from "./component/setCountdown.jsx";
 
 //render your react application
-ReactDOM.render(<Home />, document.querySelector("#app"));
+
+var counter = 0
+
+
+ReactDOM.render(
+    <React.Fragment>
+        <SecondsCounter id="counter" seconds={counter}/>
+        <SetCountdown/>
+    </React.Fragment>
+
+,document.querySelector("#app"));
+
+
+
+
+
+
+
