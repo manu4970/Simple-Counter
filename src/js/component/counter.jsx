@@ -24,7 +24,6 @@ const SecondsCounter = (props) => {
 			<p id="numbers">{counter}</p>
 		</div>
 	);
-
 }
 
 
