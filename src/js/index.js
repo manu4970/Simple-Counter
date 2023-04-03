@@ -17,7 +17,7 @@ var counter = 0
 ReactDOM.render(
     <React.Fragment>
         <SecondsCounter id="counter" seconds={counter}/>
-        <SetCountdown/>
+        {/* <SetCountdown/> */}
     </React.Fragment>
 
 ,document.querySelector("#app"));

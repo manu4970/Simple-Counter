@@ -6,35 +6,45 @@ import React from "react";
 const SecondsCounter = (props) => {
 
 	const [counter, setCounter] = useState(0);
+	const [input, setInput] = useState('')
+
+	function startCountdown({target}) {
+		setInput(target.value)
+    }
+
+	function submit(e){
+		e.preventDefault()
+		console.log(input)
+		setCounter((counter)=> counter = input)
+
+	}
 
 	useEffect(() => {
 	  const interval = setInterval(() => {
 		setCounter((counter) => counter + 1);
 	  }, 1000);
   
-	  return () => {
-		clearInterval(interval);
-	  };
+	  return interval
+
 	}, []);
 
 	return (
-
-		<div id="counter" >
-			<i className="fa-regular fa-clock fa-5x "></i>
-			<p id="numbers">{counter}</p>
+		<div>
+			<div id="counter" >
+				<i className="fa-regular fa-clock fa-5x "></i>
+				<p id="numbers">{counter}</p>
+			</div>
+			<form onSubmit={submit} id="setCountdown">
+				<div>
+					<label htmlFor="setCountdown" className="form-label">Set a countdown start</label>
+					<input type="text" value={input} onChange={startCountdown} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+				</div>
+				<button type="submit" className="btn btn-primary">Start Countdown</button>
+			</form>
 		</div>
 	);
 }
 
-
-
-// const Number = () => {
-
-// 	setInterval(() => {
-// 		counter++
-// 	}, 1000)
-// 	return counter++
-// }
 
 
 export default SecondsCounter;
